@@ -170,7 +170,7 @@
 
         .author-line {
             margin: 0 auto;
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(16px, 1.7vw, 21px);
             line-height: 1.45;
             color: var(--text-deep);
             font-weight: 400;
@@ -192,12 +192,13 @@
         }
 
         .author-line.rest {
-            max-width: 900px;
+            max-width: 100%;
+            white-space: nowrap;
         }
 
         .author-line.lead,
         .author-line.rest {
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(16px, 1.7vw, 21px);
             line-height: 1.45;
         }
 
@@ -499,6 +500,10 @@
 
             .nav-links {
                 justify-content: flex-start;
+            }
+
+            .author-line.rest {
+                white-space: normal;
             }
         }
 
