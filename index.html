@@ -158,21 +158,27 @@
         }
 
         .hero-authors {
-            max-width: 980px;
-            margin: 22px auto 0;
+            max-width: 1080px;
+            margin: 26px auto 0;
+            padding: 20px 24px 18px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(25, 75, 141, 0.1);
+            border-radius: 22px;
+            box-shadow: 0 10px 24px rgba(20, 53, 98, 0.06);
         }
 
         .author-line {
-            margin: 0;
-            font-size: clamp(20px, 2.35vw, 28px);
+            margin: 0 auto;
+            font-size: clamp(18px, 2vw, 24px);
             line-height: 1.45;
             color: var(--text-deep);
             font-weight: 400;
+            text-wrap: balance;
         }
 
         .author-line + .author-line {
-            margin-top: 4px;
+            margin-top: 8px;
         }
 
         .author-line sup {
@@ -181,16 +187,49 @@
             font-weight: 700;
         }
 
+        .author-line.lead {
+            max-width: 520px;
+        }
+
+        .author-line.rest {
+            max-width: 900px;
+        }
+
+        .author-line.lead,
+        .author-line.rest {
+            font-size: clamp(18px, 2vw, 24px);
+            line-height: 1.45;
+        }
+
+        .author-meta {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+        }
+
         .author-affiliation {
-            margin: 14px 0 0;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--primary-soft);
             font-size: 18px;
             line-height: 1.5;
             color: var(--text);
-            font-weight: 500;
+            font-weight: 700;
         }
 
         .author-note {
-            margin: 8px 0 0;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
             font-size: 18px;
             line-height: 1.5;
             color: var(--text-deep);
@@ -508,14 +547,16 @@
             <h1>World2Act</h1>
             <p class="hero-subtitle">Latent Action Post-Training via Skill-Compositional World Models</p>
             <div class="hero-authors">
-                <p class="author-line">
+                <p class="author-line lead">
                     An Dinh Vuong<sup>*</sup>, Tuan Van Vo<sup>*</sup>
                 </p>
-                <p class="author-line">
+                <p class="author-line rest">
                     Abdullah Sohail, Haoran Ding, Liang Ma, Xiaodan Liang, Anqing Duan, Ivan Laptev, and Ian Reid
                 </p>
-                <p class="author-affiliation">MBZUAI, UAE</p>
-                <p class="author-note"><sup>*</sup> Equal contribution</p>
+                <div class="author-meta">
+                    <p class="author-affiliation">MBZUAI, UAE</p>
+                    <p class="author-note"><sup>*</sup> Equal contribution</p>
+                </div>
             </div>
             <p class="hero-summary">
                 World2Act transfers world model dynamics into VLA policies through direct latent-to-policy alignment, enabling scalable post-training for both simulated and real-world robot control.
