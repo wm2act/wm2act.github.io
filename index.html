@@ -186,8 +186,13 @@
             box-shadow: 0 6px 18px rgba(45, 62, 84, 0.12);
         }
 
-        .resource-button.primary {
-            background: var(--primary);
+        .resource-button:hover {
+            opacity: 0.94;
+        }
+
+        .resource-button.disabled {
+            cursor: default;
+            opacity: 0.82;
         }
 
         .video-panel,
@@ -461,10 +466,8 @@
             </p>
 
             <div class="resource-buttons">
-                <a class="resource-button primary" href="#video">Video</a>
-                <a class="resource-button" href="#motivation">Motivation</a>
-                <a class="resource-button" href="#method">Method</a>
-                <a class="resource-button" href="#results">Results</a>
+                <a class="resource-button" href="https://arxiv.org/abs/2603.10422" target="_blank" rel="noopener noreferrer">Paper</a>
+                <span class="resource-button disabled">Code (Coming Soon)</span>
             </div>
 
             <div class="video-panel" id="video">
@@ -518,13 +521,13 @@
 
                 <figure class="content-card">
                     <div class="figure-frame">
-                        <!-- Slide 03: bridging the gap from world models to VLA policies -->
-                        <img src="images/3.png" alt="Question about transferring world model dynamics priors to VLA policies" loading="eager">
+                        <!-- Slide 06: challenge slide on current progress in transferring WM dynamics to VLA control -->
+                        <img src="images/6.png" alt="Current progress in transferring world model dynamics to VLA control" loading="eager">
                     </div>
                     <figcaption class="card-copy">
-                        <h3>The missing bridge is WM-to-policy transfer</h3>
+                        <h3>Current transfer pipelines still leave a gap</h3>
                         <p class="figure-caption">
-                            World2Act is built to transfer those world-model dynamics priors into executable VLA control.
+                            Existing approaches rely on pseudo-labeling, reward correction, or heavy joint modeling, which motivates direct latent-to-policy alignment.
                         </p>
                     </figcaption>
                 </figure>
@@ -571,20 +574,7 @@
                 </figure>
             </div>
 
-            <div class="two-column" style="margin-top: 22px;">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 07: challenge, imperfect rollouts -->
-                        <img src="images/7.png" alt="Imperfect rollout challenge" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Hallucinated rollouts remain a practical issue</h3>
-                        <p class="figure-caption">
-                            Image-space supervision is fragile when imagined rollouts drift away from physically meaningful behavior.
-                        </p>
-                    </figcaption>
-                </figure>
-
+            <div style="margin-top: 22px;">
                 <figure class="content-card">
                     <div class="figure-frame">
                         <!-- Slide 08: challenge question on pixel-space supervision -->
