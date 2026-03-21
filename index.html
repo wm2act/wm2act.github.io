@@ -6,6 +6,8 @@
     <meta name="description" content="World2Act: Latent Action Post-Training via Skill-Compositional World Models.">
     <meta name="theme-color" content="#194b8d">
     <title>World2Act | Latent Action Post-Training via Skill-Compositional World Models</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <style>
         :root {
             --bg: #f7f9fc;
@@ -301,6 +303,15 @@
             stroke-linejoin: round;
         }
 
+        .resource-icon i {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .resource-icon .ai {
+            font-size: 22px;
+        }
+
         .video-panel,
         .content-card,
         .note-card,
@@ -449,6 +460,12 @@
             height: auto;
         }
 
+        .comparison-video-frame video {
+            display: block;
+            aspect-ratio: 16 / 9;
+            background: #081120;
+        }
+
         .card-copy {
             padding: 18px 6px 4px;
         }
@@ -498,10 +515,10 @@
         }
 
         .section-kicker {
-            margin: 28px 0 14px;
+            margin: 38px 0 18px;
             text-align: center;
-            font-size: 14px;
-            letter-spacing: 0.16em;
+            font-size: 18px;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
             font-weight: 700;
             color: var(--primary);
@@ -885,32 +902,19 @@
             <div class="resource-buttons">
                 <a class="resource-button" href="https://arxiv.org/abs/2603.10422" target="_blank" rel="noopener noreferrer">
                     <span class="resource-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M7 5h7l5 5v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
-                            <path d="M14 5v5h5"></path>
-                            <path d="M8.5 14h7"></path>
-                            <path d="M8.5 17h5"></path>
-                        </svg>
+                        <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                 </a>
                 <span class="resource-button disabled">
                     <span class="resource-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <ellipse cx="12" cy="6" rx="6.5" ry="2.8"></ellipse>
-                            <path d="M5.5 6v5c0 1.55 2.9 2.8 6.5 2.8s6.5-1.25 6.5-2.8V6"></path>
-                            <path d="M5.5 11v5c0 1.55 2.9 2.8 6.5 2.8s6.5-1.25 6.5-2.8v-5"></path>
-                        </svg>
+                        <i class="fas fa-database"></i>
                     </span>
                     <span>Dataset</span>
                 </span>
                 <span class="resource-button disabled">
                     <span class="resource-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="m9 18-6-6 6-6"></path>
-                            <path d="m15 6 6 6-6 6"></path>
-                            <path d="m14 4-4 16"></path>
-                        </svg>
+                        <i class="fab fa-github"></i>
                     </span>
                     <span>Code (Coming Soon)</span>
                 </span>
@@ -1115,14 +1119,26 @@
                 <button class="content-card interactive-card" type="button" data-gallery="libero-world-model">
                     <div class="figure-frame">
                         <div class="preview-strip three">
-                            <div class="preview-placeholder">videos/libero_pick_and_place.mp4</div>
-                            <div class="preview-placeholder">videos/libero_open_double_doors.mp4</div>
-                            <div class="preview-placeholder">videos/libero_long_horizon.mp4</div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/open_the_middle_drawer_of_the_cabinet-72-0-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate-82-0-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy-12-0-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
                         </div>
                     </div>
                     <div class="card-copy">
                         <h3>LIBERO Skill-Compositional World Model Imagined rollouts</h3>
-                        <p class="figure-caption">Reserved placeholders for LIBERO imagined rollouts: pick-and-place, open double doors, and long-horizon tasks.</p>
+                        <p class="figure-caption">open the middle drawer of the cabinet, pick up the black bowl from table center and place it on the plate, pick up the book and place it in the back compartment of the caddy.</p>
                     </div>
                 </button>
 
@@ -1152,6 +1168,18 @@
                 </div>
                 </button>
             </div>
+
+            <button class="content-card interactive-card" type="button" data-gallery="drawer-imagination-execution">
+                <div class="figure-frame comparison-video-frame">
+                    <video autoplay loop muted playsinline preload="metadata">
+                        <source src="videos/video_page_22.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-copy">
+                    <h3>Imagination by Skill-WM and Execution by GR00T-N1.6 + World2Act</h3>
+                    <p class="figure-caption">Task: close the drawer.</p>
+                </div>
+            </button>
 
             <p class="section-kicker">Real-World Execution</p>
 
@@ -1280,25 +1308,25 @@
             },
             "libero-world-model": {
                 title: "LIBERO Skill-Compositional World Model Imagined rollouts",
-                description: "Placeholder slots for LIBERO imagined rollouts. Replace these filenames once the videos are available.",
+                description: "open the middle drawer of the cabinet, pick up the black bowl from table center and place it on the plate, pick up the book and place it in the back compartment of the caddy.",
                 items: [
                     {
-                        type: "placeholder",
-                        label: "LIBERO pick and place",
-                        description: "Placeholder video name",
-                        src: "videos/libero_pick_and_place.mp4"
+                        type: "video",
+                        label: "LIBERO: open the middle drawer of the cabinet",
+                        description: "open the middle drawer of the cabinet",
+                        src: "videos/open_the_middle_drawer_of_the_cabinet-72-0-output_aa.mp4"
                     },
                     {
-                        type: "placeholder",
-                        label: "LIBERO open double doors",
-                        description: "Placeholder video name",
-                        src: "videos/libero_open_double_doors.mp4"
+                        type: "video",
+                        label: "LIBERO: pick up the black bowl from table center and place it on the plate",
+                        description: "pick up the black bowl from table center and place it on the plate",
+                        src: "videos/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate-82-0-output_aa.mp4"
                     },
                     {
-                        type: "placeholder",
-                        label: "LIBERO long-horizon task",
-                        description: "Placeholder video name",
-                        src: "videos/libero_long_horizon.mp4"
+                        type: "video",
+                        label: "LIBERO: pick up the book and place it in the back compartment of the caddy",
+                        description: "pick up the book and place it in the back compartment of the caddy",
+                        src: "videos/pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy-12-0-output_aa.mp4"
                     }
                 ]
             },
@@ -1309,20 +1337,32 @@
                     {
                         type: "video",
                         label: "Bowl to plate",
-                        description: "Existing imagined rollout video.",
+                        description: "pick the bowl and place the bowl on the plate",
                         src: "videos/video_page_19.mp4"
                     },
                     {
                         type: "video",
                         label: "Cup to cabinet",
-                        description: "Existing imagined rollout video.",
+                        description: "pick the cup and place the cup on the cabinet",
                         src: "videos/video_page_20.mp4"
                     },
                     {
                         type: "video",
                         label: "Close drawer",
-                        description: "Existing imagined rollout video.",
+                        description: "close the drawer",
                         src: "videos/video_page_21.mp4"
+                    }
+                ]
+            },
+            "drawer-imagination-execution": {
+                title: "Imagination by Skill-WM and Execution by GR00T-N1.6 + World2Act",
+                description: "Task: close the drawer.",
+                items: [
+                    {
+                        type: "video",
+                        label: "Close the drawer",
+                        description: "Side-by-side comparison of imagination by Skill-WM and execution by GR00T-N1.6 + World2Act.",
+                        src: "videos/video_page_22.mp4"
                     }
                 ]
             },
