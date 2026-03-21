@@ -398,7 +398,8 @@
         .three-column,
         .metrics-grid,
         .gallery-grid,
-        .summary-grid {
+        .summary-grid,
+        .qualitative-stack {
             display: grid;
             gap: 22px;
         }
@@ -422,6 +423,10 @@
 
         .summary-grid {
             grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+        }
+
+        .qualitative-stack {
+            grid-template-columns: 1fr;
         }
 
         .content-card,
@@ -1014,30 +1019,18 @@
 
             <p class="section-kicker">Skill-Compositional World Model</p>
 
-            <div class="two-column">
-                <button class="content-card interactive-card" type="button" data-gallery="skill-world-model">
+            <div class="qualitative-stack">
+                <button class="content-card interactive-card" type="button" data-gallery="robocasa-world-model">
                     <div class="figure-frame">
                         <div class="preview-strip three">
-                            <div class="preview-tile">
-                                <video autoplay loop muted playsinline preload="metadata">
-                                    <source src="videos/video_page_19.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="preview-tile">
-                                <video autoplay loop muted playsinline preload="metadata">
-                                    <source src="videos/video_page_20.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="preview-tile">
-                                <video autoplay loop muted playsinline preload="metadata">
-                                    <source src="videos/video_page_21.mp4" type="video/mp4">
-                                </video>
-                            </div>
+                            <div class="preview-placeholder">videos/robocasa_bowl_to_plate.mp4</div>
+                            <div class="preview-placeholder">videos/robocasa_cup_to_cabinet.mp4</div>
+                            <div class="preview-placeholder">videos/robocasa_close_drawer.mp4</div>
                         </div>
                     </div>
                     <div class="card-copy">
-                        <h3>Compositional imagined rollouts</h3>
-                        <p class="figure-caption">Open this pane to view three imagined world-model rollouts together: bowl to plate, cup to cabinet, and drawer closing.</p>
+                        <h3>RoboCasa Skill-Compositional World Model Imagined rollouts</h3>
+                        <p class="figure-caption">Reserved placeholders for RoboCasa imagined rollouts: bowl to plate, cup to cabinet, and drawer closing.</p>
                     </div>
                 </button>
 
@@ -1050,42 +1043,37 @@
                         </div>
                     </div>
                     <div class="card-copy">
-                        <h3>Additional LIBERO cases</h3>
-                        <p class="figure-caption">Reserved placeholders for additional skill-compositional examples such as pick-and-place, open double doors, and long-horizon LIBERO tasks.</p>
+                        <h3>LIBERO Skill-Compositional World Model Imagined rollouts</h3>
+                        <p class="figure-caption">Reserved placeholders for LIBERO imagined rollouts: pick-and-place, open double doors, and long-horizon tasks.</p>
                     </div>
                 </button>
-            </div>
 
-            <p class="section-kicker">Real-World Execution</p>
-            <p class="section-body-copy">
-                The execution results are grouped into one row of three panes, matching the requested interactive comparison view.
-            </p>
-
-            <button class="content-card interactive-card" type="button" data-gallery="execution-world2act">
+                <button class="content-card interactive-card" type="button" data-gallery="real-world-world-model">
                 <div class="figure-frame">
                     <div class="preview-strip three">
                         <div class="preview-tile">
                             <video autoplay loop muted playsinline preload="metadata">
-                                <source src="videos/video_page_23.mp4" type="video/mp4">
+                                <source src="videos/video_page_19.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="preview-tile">
                             <video autoplay loop muted playsinline preload="metadata">
-                                <source src="videos/video_page_24.mp4" type="video/mp4">
+                                <source src="videos/video_page_20.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="preview-tile">
                             <video autoplay loop muted playsinline preload="metadata">
-                                <source src="videos/video_page_25.mp4" type="video/mp4">
+                                <source src="videos/video_page_21.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
                 </div>
                 <div class="card-copy">
-                    <h3>Execution by GR00T-N1.6 + World2Act</h3>
-                    <p class="figure-caption">Click to open cup-to-plate, pick-bowl, and close-drawer execution results together.</p>
+                    <h3>Real-World Skill-Compositional World Model Imagined rollouts</h3>
+                    <p class="figure-caption">Bowl to plate, cup to cabinet, and drawer closing.</p>
                 </div>
             </button>
+            </div>
         </section>
 
         <hr class="section-divider">
@@ -1139,33 +1127,33 @@
         const galleryModalClose = document.getElementById("gallery-modal-close");
 
         const galleryDefinitions = {
-            "skill-world-model": {
-                title: "Skill-Compositional World Model",
-                description: "Imagined rollouts showing how atomic skills compose into longer behaviors.",
+            "robocasa-world-model": {
+                title: "RoboCasa Skill-Compositional World Model Imagined rollouts",
+                description: "Placeholder slots for RoboCasa imagined rollouts. Replace these filenames once the videos are available.",
                 items: [
                     {
-                        type: "video",
-                        label: "Pick and place: bowl to plate",
-                        description: "Existing video from the current page assets.",
-                        src: "videos/video_page_19.mp4"
+                        type: "placeholder",
+                        label: "RoboCasa bowl to plate",
+                        description: "Placeholder video name",
+                        src: "videos/robocasa_bowl_to_plate.mp4"
                     },
                     {
-                        type: "video",
-                        label: "Cup to cabinet",
-                        description: "Existing video from the current page assets.",
-                        src: "videos/video_page_20.mp4"
+                        type: "placeholder",
+                        label: "RoboCasa cup to cabinet",
+                        description: "Placeholder video name",
+                        src: "videos/robocasa_cup_to_cabinet.mp4"
                     },
                     {
-                        type: "video",
-                        label: "Close drawer",
-                        description: "Existing video from the current page assets.",
-                        src: "videos/video_page_21.mp4"
+                        type: "placeholder",
+                        label: "RoboCasa close drawer",
+                        description: "Placeholder video name",
+                        src: "videos/robocasa_close_drawer.mp4"
                     }
                 ]
             },
             "libero-world-model": {
-                title: "LIBERO Skill-Compositional Cases",
-                description: "Placeholder slots for additional LIBERO world-model compositions. Replace these filenames once the videos are available.",
+                title: "LIBERO Skill-Compositional World Model Imagined rollouts",
+                description: "Placeholder slots for LIBERO imagined rollouts. Replace these filenames once the videos are available.",
                 items: [
                     {
                         type: "placeholder",
@@ -1187,27 +1175,27 @@
                     }
                 ]
             },
-            "execution-world2act": {
-                title: "Execution by GR00T-N1.6 + World2Act",
-                description: "Grouped real-world executions after World2Act post-training.",
+            "real-world-world-model": {
+                title: "Real-World Skill-Compositional World Model Imagined rollouts",
+                description: "Existing imagined rollout videos: bowl to plate, cup to cabinet, and drawer closing.",
                 items: [
                     {
                         type: "video",
-                        label: "Cup to plate",
-                        description: "Real robot execution for cup placement.",
-                        src: "videos/video_page_23.mp4"
+                        label: "Bowl to plate",
+                        description: "Existing imagined rollout video.",
+                        src: "videos/video_page_19.mp4"
                     },
                     {
                         type: "video",
-                        label: "Pick bowl",
-                        description: "Real robot execution for bowl pickup.",
-                        src: "videos/video_page_24.mp4"
+                        label: "Cup to cabinet",
+                        description: "Existing imagined rollout video.",
+                        src: "videos/video_page_20.mp4"
                     },
                     {
                         type: "video",
                         label: "Close drawer",
-                        description: "Real robot execution for drawer closing.",
-                        src: "videos/video_page_25.mp4"
+                        description: "Existing imagined rollout video.",
+                        src: "videos/video_page_21.mp4"
                     }
                 ]
             }
