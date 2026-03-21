@@ -589,31 +589,31 @@
 
         .summary-heading p {
             max-width: 1080px;
-            font-size: clamp(24px, 3.2vw, 38px);
-            line-height: 1.35;
+            font-size: clamp(18px, 2.2vw, 28px);
+            line-height: 1.4;
             color: var(--primary);
         }
 
         .summary-banner {
             max-width: 1180px;
-            margin: 0 auto 32px;
-            padding: 18px 26px;
+            margin: 0 auto 24px;
+            padding: 14px 22px;
             background: #dbe5f2;
             text-align: center;
         }
 
         .summary-banner h3 {
-            margin: 0 0 8px;
-            font-size: clamp(28px, 3vw, 40px);
-            line-height: 1.15;
+            margin: 0 0 6px;
+            font-size: clamp(22px, 2.4vw, 32px);
+            line-height: 1.12;
             font-weight: 700;
             color: var(--primary);
         }
 
         .summary-banner p {
             margin: 0;
-            font-size: clamp(20px, 2.7vw, 34px);
-            line-height: 1.45;
+            font-size: clamp(16px, 1.9vw, 24px);
+            line-height: 1.38;
             color: var(--primary);
         }
 
@@ -623,9 +623,9 @@
         }
 
         .summary-contributions h3 {
-            margin: 0 0 22px;
+            margin: 0 0 18px;
             text-align: center;
-            font-size: clamp(32px, 3.5vw, 48px);
+            font-size: clamp(24px, 2.8vw, 36px);
             line-height: 1.15;
             font-weight: 700;
             color: var(--primary);
@@ -634,33 +634,33 @@
         .summary-columns {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 26px 44px;
+            gap: 18px 34px;
         }
 
         .summary-list {
             display: grid;
-            gap: 18px;
+            gap: 14px;
         }
 
         .summary-item {
             display: grid;
-            grid-template-columns: 34px 1fr;
-            gap: 14px;
+            grid-template-columns: 28px 1fr;
+            gap: 12px;
             align-items: start;
         }
 
         .summary-check {
-            font-size: 34px;
+            font-size: 28px;
             line-height: 1;
             font-weight: 700;
             color: #14b86a;
-            transform: translateY(2px);
+            transform: translateY(1px);
         }
 
         .summary-item p {
             margin: 0;
-            font-size: clamp(20px, 2.2vw, 28px);
-            line-height: 1.48;
+            font-size: clamp(15px, 1.55vw, 21px);
+            line-height: 1.42;
             color: var(--primary);
         }
 
@@ -1089,9 +1089,21 @@
                 <button class="content-card interactive-card" type="button" data-gallery="robocasa-world-model">
                     <div class="figure-frame">
                         <div class="preview-strip three">
-                            <div class="preview-placeholder">videos/PnPCabToCounter-eps_00-seed_12-output_aa.mp4</div>
-                            <div class="preview-placeholder">videos/PnPCounterToCab-eps_01-seed_32-output_aa.mp4</div>
-                            <div class="preview-placeholder">videos/OpenDrawer-eps_01-seed_22-output_aa.mp4</div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/PnPCabToCounter-eps_00-seed_12-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/PnPCounterToCab-eps_01-seed_32-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/OpenDrawer-eps_01-seed_22-output_aa.mp4" type="video/mp4">
+                                </video>
+                            </div>
                         </div>
                     </div>
                     <div class="card-copy">
@@ -1247,19 +1259,19 @@
                 description: "pick the condiment bottle from the cabinet and place it on the counter, pick the cupcake from the counter and place it in the cabinet, open the right drawer",
                 items: [
                     {
-                        type: "placeholder",
+                        type: "video",
                         label: "RoboCasa: PnPCabToCounter",
                         description: "pick the condiment bottle from the cabinet and place it on the counter",
                         src: "videos/PnPCabToCounter-eps_00-seed_12-output_aa.mp4"
                     },
                     {
-                        type: "placeholder",
+                        type: "video",
                         label: "RoboCasa: PnPCounterToCab",
                         description: "pick the cupcake from the counter and place it in the cabinet",
                         src: "videos/PnPCounterToCab-eps_01-seed_32-output_aa.mp4"
                     },
                     {
-                        type: "placeholder",
+                        type: "video",
                         label: "RoboCasa: OpenDrawer",
                         description: "open the right drawer",
                         src: "videos/OpenDrawer-eps_01-seed_22-output_aa.mp4"
