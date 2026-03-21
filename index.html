@@ -587,20 +587,86 @@
             margin-top: 22px;
         }
 
-        .summary-single {
-            max-width: 980px;
+        .summary-heading p {
+            max-width: 1080px;
+            font-size: clamp(24px, 3.2vw, 38px);
+            line-height: 1.35;
+            color: var(--primary);
+        }
+
+        .summary-banner {
+            max-width: 1180px;
+            margin: 0 auto 32px;
+            padding: 18px 26px;
+            background: #dbe5f2;
+            text-align: center;
+        }
+
+        .summary-banner h3 {
+            margin: 0 0 8px;
+            font-size: clamp(28px, 3vw, 40px);
+            line-height: 1.15;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .summary-banner p {
+            margin: 0;
+            font-size: clamp(20px, 2.7vw, 34px);
+            line-height: 1.45;
+            color: var(--primary);
+        }
+
+        .summary-contributions {
+            max-width: 1180px;
             margin: 0 auto;
         }
 
-        .summary-single ul {
-            margin: 14px 0 0;
-            padding-left: 22px;
-            color: var(--text-soft);
+        .summary-contributions h3 {
+            margin: 0 0 22px;
+            text-align: center;
+            font-size: clamp(32px, 3.5vw, 48px);
+            line-height: 1.15;
+            font-weight: 700;
+            color: var(--primary);
         }
 
-        .summary-single li {
-            margin-bottom: 12px;
-            line-height: 1.7;
+        .summary-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px 44px;
+        }
+
+        .summary-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .summary-item {
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .summary-check {
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 700;
+            color: #14b86a;
+            transform: translateY(2px);
+        }
+
+        .summary-item p {
+            margin: 0;
+            font-size: clamp(20px, 2.2vw, 28px);
+            line-height: 1.48;
+            color: var(--primary);
+        }
+
+        .summary-item strong {
+            color: var(--primary);
+            font-weight: 700;
         }
 
         .gallery-modal {
@@ -1107,22 +1173,43 @@
         <hr class="section-divider">
 
         <section class="section" id="summary">
-            <div class="section-heading">
-                <h2>Summary</h2>
+            <div class="section-heading summary-heading">
+                <h2>Summary: World2Act</h2>
                 <div class="section-rule"></div>
                 <p>
-                    World2Act provides a scalable path for transferring world-model dynamics into VLA policies through direct latent alignment.
+                    Bridging the gap between WM and VLA via latent alignment
                 </p>
             </div>
 
-            <div class="summary-card summary-single">
-                <h3>Key contributions</h3>
-                <ul>
-                    <li><strong style="color: var(--text-deep);">Latent action alignment:</strong> World2Act transfers world-model dynamics into VLA control without depending on pseudo-actions or pixel-space rewards.</li>
-                    <li><strong style="color: var(--text-deep);">Skill-compositional generation:</strong> atomic decomposition keeps arbitrary-length imagined rollouts stable enough to support downstream policy improvement.</li>
-                    <li><strong style="color: var(--text-deep);">Scalable post-training:</strong> the method improves strong base VLAs through a residual policy instead of replacing the original backbone.</li>
-                    <li><strong style="color: var(--text-deep);">Consistent empirical gains:</strong> improvements hold in RoboCasa, LIBERO, and the real-world study, including the highlighted 6.7% physical-robot gain.</li>
-                </ul>
+            <div class="summary-banner">
+                <h3>Scalable WM-to-VLA Transfer for Robotics</h3>
+                <p>World2Act provides a scalable and robust framework for transferring World Model dynamics to VLA policies, enabling reliable control through direct latent alignment.</p>
+            </div>
+
+            <div class="summary-contributions">
+                <h3>Key Contributions</h3>
+                <div class="summary-columns">
+                    <div class="summary-list">
+                        <div class="summary-item">
+                            <span class="summary-check">✓</span>
+                            <p><strong>Latent Action Alignment:</strong> We align WM video dynamics directly with VLA action spaces through feature alignment, reducing dependence on pixel space.</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-check">✓</span>
+                            <p><strong>Automatic Data Pipeline:</strong> Automates skill-level segmentation and alignment to reduce task-length variance, enabling stable, arbitrary-length generation through our new RoboCasa-Skill and LIBERO-Skill datasets.</p>
+                        </div>
+                    </div>
+                    <div class="summary-list">
+                        <div class="summary-item">
+                            <span class="summary-check">✓</span>
+                            <p><strong>Skill-Compositional Framework:</strong> We enable arbitrary-length imagination rollouts by decomposing multi-step instructions into atomic subgoals for consistent, autoregressive video generation.</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-check">✓</span>
+                            <p><strong>Across simulation and real-world benchmarks:</strong> <em>World2Act</em> yields significant improvements over prior WM-based policies and post-training baselines.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1157,25 +1244,25 @@
         const galleryDefinitions = {
             "robocasa-world-model": {
                 title: "RoboCasa Skill-Compositional World Model Imagined rollouts",
-                description: "Placeholder slots for RoboCasa imagined rollouts. Replace these filenames once the videos are available.",
+                description: "pick the condiment bottle from the cabinet and place it on the counter, pick the cupcake from the counter and place it in the cabinet, open the right drawer",
                 items: [
                     {
                         type: "placeholder",
                         label: "RoboCasa bowl to plate",
-                        description: "Placeholder video name",
-                        src: "videos/robocasa_bowl_to_plate.mp4"
+                        description: "pick the condiment bottle from the cabinet and place it on the counter",
+                        src: "videos/PnPCabToCounter-eps_00-seed_12-output_aa.mp4"
                     },
                     {
                         type: "placeholder",
                         label: "RoboCasa cup to cabinet",
-                        description: "Placeholder video name",
-                        src: "videos/robocasa_cup_to_cabinet.mp4"
+                        description: "pick the cupcake from the counter and place it in the cabinet",
+                        src: "videos/PnPCounterToCab-eps_01-seed_32-output_aa.mp4"
                     },
                     {
                         type: "placeholder",
                         label: "RoboCasa close drawer",
-                        description: "Placeholder video name",
-                        src: "videos/robocasa_close_drawer.mp4"
+                        description: "open the right drawer",
+                        src: "videos/OpenDrawer-eps_01-seed_22-output_aa.mp4"
                     }
                 ]
             },
