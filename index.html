@@ -811,10 +811,6 @@
                     <p class="author-note"><sup>*</sup> Equal contribution</p>
                 </div>
             </div>
-            <p class="hero-summary">
-                World2Act transfers world model dynamics into VLA policies through direct latent-to-policy alignment, enabling scalable post-training for both simulated and real-world robot control.
-            </p>
-
             <div class="resource-buttons">
                 <a class="resource-button" href="https://arxiv.org/abs/2603.10422" target="_blank" rel="noopener noreferrer">
                     <span class="resource-icon" aria-hidden="true">
@@ -973,7 +969,7 @@
                     <figcaption class="card-copy">
                         <h3>RoboCasa</h3>
                         <p class="figure-caption">
-                            World2Act improves both Cosmos Policy and GR00T-N1.6-ft based policies in the main RoboCasa table.
+                            World2Act sets a new RoboCasa state of the art: Cosmos Policy + World2Act reaches 66.3% with only 50 real demos and 50 imagined trajectories, and improves GR00T-N1.6-ft by 2.5% under the same synthetic-data budget.
                         </p>
                     </figcaption>
                 </figure>
@@ -986,7 +982,7 @@
                     <figcaption class="card-copy">
                         <h3>LIBERO</h3>
                         <p class="figure-caption">
-                            The LIBERO results show consistent gains from latent transfer across multiple generalization axes.
+                            World2Act achieves the top LIBERO average: it improves GR00T-N1.6-ft from 97.0% to 98.1%, lifts Cosmos Policy by 0.1%, and outperforms DreamGen, which drops to 92.6%, across spatial, object, goal, and long-horizon skills.
                         </p>
                     </figcaption>
                 </figure>
@@ -1001,7 +997,7 @@
                     <figcaption class="card-copy">
                         <h3>Real-world evaluation</h3>
                         <p class="figure-caption">
-                            The physical robot study improves all three tasks, with the headline result summarized as a 6.7% real-world improvement.
+                            On physical hardware, World2Act improves the baseline by an average of 6.67% across all tasks, matching the simulation trend and validating the practical viability of the WM-to-VLA pipeline.
                         </p>
                     </figcaption>
                 </figure>
@@ -1014,15 +1010,9 @@
             <div class="section-heading">
                 <h2>Qualitative Results</h2>
                 <div class="section-rule"></div>
-                <p>
-                    Click a pane to open grouped qualitative videos in the main screen, then close with the X button.
-                </p>
             </div>
 
             <p class="section-kicker">Skill-Compositional World Model</p>
-            <p class="section-body-copy">
-                These panes highlight successful composition in imagined rollouts. The first uses the current world-model videos, while the second reserves placeholders for additional LIBERO examples.
-            </p>
 
             <div class="two-column">
                 <button class="content-card interactive-card" type="button" data-gallery="skill-world-model">
