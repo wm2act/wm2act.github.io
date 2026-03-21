@@ -754,24 +754,28 @@
         }
 
         .gallery-modal-dialog.single-item {
-            width: min(1240px, 100%);
+            width: min(1180px, 100%);
         }
 
         .gallery-modal-dialog.single-item .gallery-modal-header h3 {
-            font-size: clamp(20px, 2.2vw, 28px);
-            line-height: 1.15;
+            font-size: clamp(17px, 1.7vw, 23px);
+            line-height: 1.18;
         }
 
         .gallery-modal-grid.single-item {
             grid-template-columns: 1fr;
+            justify-items: center;
         }
 
         .gallery-modal-grid.single-item .gallery-modal-media {
-            max-width: 1100px;
+            width: min(960px, 100%);
+            margin: 0 auto;
         }
 
         .gallery-modal-grid.single-item .gallery-modal-media video {
             aspect-ratio: 16 / 9;
+            max-height: calc(100vh - 360px);
+            object-fit: contain;
         }
 
         .gallery-modal-media {
