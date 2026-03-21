@@ -158,27 +158,26 @@
         }
 
         .hero-authors {
-            max-width: 1080px;
-            margin: 26px auto 0;
-            padding: 20px 24px 18px;
+            max-width: 1020px;
+            margin: 28px auto 0;
+            padding: 0;
             text-align: center;
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(25, 75, 141, 0.1);
-            border-radius: 22px;
-            box-shadow: 0 10px 24px rgba(20, 53, 98, 0.06);
+            display: grid;
+            gap: 8px;
+            justify-items: center;
         }
 
         .author-line {
             margin: 0 auto;
-            font-size: clamp(16px, 1.7vw, 21px);
-            line-height: 1.45;
+            font-size: clamp(15px, 1.45vw, 18px);
+            line-height: 1.42;
             color: var(--text-deep);
             font-weight: 400;
-            text-wrap: balance;
+            letter-spacing: -0.01em;
         }
 
         .author-line + .author-line {
-            margin-top: 8px;
+            margin-top: 0;
         }
 
         .author-line sup {
@@ -188,7 +187,7 @@
         }
 
         .author-line.lead {
-            max-width: 520px;
+            max-width: 460px;
         }
 
         .author-line.rest {
@@ -198,17 +197,17 @@
 
         .author-line.lead,
         .author-line.rest {
-            font-size: clamp(16px, 1.7vw, 21px);
-            line-height: 1.45;
+            font-size: clamp(15px, 1.45vw, 18px);
+            line-height: 1.42;
         }
 
         .author-meta {
-            margin-top: 14px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px 14px;
+            gap: 8px 12px;
         }
 
         .author-affiliation {
@@ -216,10 +215,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 999px;
             background: var(--primary-soft);
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.5;
             color: var(--text);
             font-weight: 700;
@@ -231,7 +230,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.5;
             color: var(--text-deep);
             font-weight: 700;
@@ -262,13 +261,15 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             padding: 12px 22px;
             border-radius: 999px;
-            background: #7c8896;
+            background: #252a33;
             color: #fff;
             font-size: 16px;
             font-weight: 700;
-            box-shadow: 0 6px 18px rgba(45, 62, 84, 0.12);
+            border: 0;
+            box-shadow: 0 10px 24px rgba(18, 27, 42, 0.14);
         }
 
         .resource-button:hover {
@@ -277,7 +278,27 @@
 
         .resource-button.disabled {
             cursor: default;
-            opacity: 0.82;
+            background: #8794a5;
+            box-shadow: 0 10px 24px rgba(18, 27, 42, 0.1);
+        }
+
+        .resource-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+
+        .resource-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .video-panel,
@@ -471,6 +492,223 @@
             line-height: 1.7;
         }
 
+        .section-kicker {
+            margin: 28px 0 14px;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .section-body-copy {
+            max-width: 860px;
+            margin: 0 auto 22px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-soft);
+        }
+
+        button.content-card,
+        button.gallery-card {
+            width: 100%;
+            border: 1px solid var(--line);
+            cursor: pointer;
+            text-align: left;
+            font: inherit;
+            color: inherit;
+            appearance: none;
+        }
+
+        .interactive-card {
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--line-strong);
+            box-shadow: 0 16px 34px rgba(20, 53, 98, 0.1);
+        }
+
+        .preview-strip {
+            display: grid;
+            gap: 10px;
+        }
+
+        .preview-strip.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .preview-tile {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #091120;
+            border: 1px solid #edf2f7;
+        }
+
+        .preview-tile video {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .preview-placeholder {
+            aspect-ratio: 4 / 3;
+            display: grid;
+            place-items: center;
+            padding: 14px;
+            text-align: center;
+            background: linear-gradient(135deg, #f3f6fa 0%, #edf2f8 100%);
+            color: var(--text-soft);
+            font-size: 14px;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        .preview-labels {
+            margin-top: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            font-size: 14px;
+            line-height: 1.45;
+            color: var(--text-soft);
+        }
+
+        .results-plot {
+            margin-top: 22px;
+        }
+
+        .summary-single {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .summary-single ul {
+            margin: 14px 0 0;
+            padding-left: 22px;
+            color: var(--text-soft);
+        }
+
+        .summary-single li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            display: none;
+            padding: 28px 20px;
+            background: rgba(10, 18, 32, 0.74);
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-modal.is-open {
+            display: grid;
+            place-items: center;
+        }
+
+        .gallery-modal-dialog {
+            width: min(1180px, 100%);
+            max-height: calc(100vh - 56px);
+            overflow: auto;
+            background: var(--surface);
+            border-radius: 28px;
+            border: 1px solid rgba(220, 229, 239, 0.9);
+            box-shadow: 0 28px 60px rgba(8, 18, 32, 0.26);
+            padding: 24px;
+        }
+
+        .gallery-modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .gallery-modal-header h3 {
+            margin: 0;
+            font-size: clamp(26px, 3vw, 36px);
+            line-height: 1.1;
+            color: var(--text-deep);
+        }
+
+        .gallery-modal-header p {
+            margin: 10px 0 0;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-soft);
+        }
+
+        .gallery-modal-close {
+            width: 46px;
+            height: 46px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--text-deep);
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .gallery-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-modal-media {
+            background: var(--surface-soft);
+            border: 1px solid #edf2f7;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .gallery-modal-media video,
+        .gallery-modal-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #081120;
+        }
+
+        .gallery-modal-placeholder {
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            text-align: center;
+            color: #dce8f6;
+            font-size: 16px;
+            line-height: 1.55;
+            font-weight: 600;
+            background: linear-gradient(135deg, #20324f 0%, #102039 100%);
+        }
+
+        .gallery-modal-caption {
+            padding: 12px 14px 14px;
+        }
+
+        .gallery-modal-caption strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 15px;
+            color: var(--text-deep);
+        }
+
+        .gallery-modal-caption p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-soft);
+        }
+
         .footer {
             padding: 36px 0 6px;
             text-align: center;
@@ -493,6 +731,12 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-modal-grid,
+            .preview-strip.three,
+            .preview-labels {
+                grid-template-columns: 1fr;
+            }
+
             .topnav-inner {
                 flex-direction: column;
                 align-items: flex-start;
@@ -504,6 +748,10 @@
 
             .author-line.rest {
                 white-space: normal;
+            }
+
+            .author-meta {
+                flex-direction: column;
             }
         }
 
@@ -540,8 +788,8 @@
             <nav class="nav-links" aria-label="Page sections">
                 <a href="#motivation">Motivation</a>
                 <a href="#method">Method</a>
-                <a href="#setups">Setups</a>
                 <a href="#results">Results</a>
+                <a href="#qualitative">Qualitative</a>
                 <a href="#summary">Summary</a>
             </nav>
         </div>
@@ -568,8 +816,37 @@
             </p>
 
             <div class="resource-buttons">
-                <a class="resource-button" href="https://arxiv.org/abs/2603.10422" target="_blank" rel="noopener noreferrer">Paper</a>
-                <span class="resource-button disabled">Code (Coming Soon)</span>
+                <a class="resource-button" href="https://arxiv.org/abs/2603.10422" target="_blank" rel="noopener noreferrer">
+                    <span class="resource-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 5h7l5 5v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
+                            <path d="M14 5v5h5"></path>
+                            <path d="M8.5 14h7"></path>
+                            <path d="M8.5 17h5"></path>
+                        </svg>
+                    </span>
+                    <span>arXiv</span>
+                </a>
+                <span class="resource-button disabled">
+                    <span class="resource-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <ellipse cx="12" cy="6" rx="6.5" ry="2.8"></ellipse>
+                            <path d="M5.5 6v5c0 1.55 2.9 2.8 6.5 2.8s6.5-1.25 6.5-2.8V6"></path>
+                            <path d="M5.5 11v5c0 1.55 2.9 2.8 6.5 2.8s6.5-1.25 6.5-2.8v-5"></path>
+                        </svg>
+                    </span>
+                    <span>Dataset</span>
+                </span>
+                <span class="resource-button disabled">
+                    <span class="resource-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m9 18-6-6 6-6"></path>
+                            <path d="m15 6 6 6-6 6"></path>
+                            <path d="m14 4-4 16"></path>
+                        </svg>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                </span>
             </div>
 
             <div class="video-panel" id="video">
@@ -603,89 +880,20 @@
                 <h2>Motivation</h2>
                 <div class="section-rule"></div>
                 <p>
-                    World models are increasingly capable of imagining useful robot behavior, but transferring those dynamics into reliable policies remains the central challenge.
+                    Existing world-model post-training still depends heavily on pixel-space supervision. World2Act instead transfers dynamics in latent space.
                 </p>
             </div>
 
-            <div class="two-column">
+            <div>
                 <figure class="content-card">
                     <div class="figure-frame">
-                        <!-- Slide 02: core research question and world model rollouts -->
-                        <img src="images/2.png" alt="Core research question with world model imagined robot actions" loading="eager">
+                        <!-- Slide 08: existing image-space transfer versus latent alignment -->
+                        <img src="images/8.png" alt="Comparison between pixel-space post-training and latent-to-policy alignment" loading="eager">
                     </div>
                     <figcaption class="card-copy">
-                        <h3>World models already capture meaningful robot dynamics</h3>
+                        <h3>Existing works correct policies in image space. World2Act transfers dynamics in latent space.</h3>
                         <p class="figure-caption">
-                            The initial framing highlights that modern world models can imagine tasks such as grasping from a cabinet or pressing a button.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 06: challenge slide on current progress in transferring WM dynamics to VLA control -->
-                        <img src="images/6.png" alt="Current progress in transferring world model dynamics to VLA control" loading="eager">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Current transfer pipelines still leave a gap</h3>
-                        <p class="figure-caption">
-                            Existing approaches rely on pseudo-labeling, reward correction, or heavy joint modeling, which motivates direct latent-to-policy alignment.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="three-column" style="margin-top: 22px;">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 04: approach 1 inverse dynamics pseudo-labeling -->
-                        <img src="images/3.png" alt="Inverse dynamics pseudo labeling approach" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Approach 1: pseudo-actions from inverse dynamics</h3>
-                        <p class="figure-caption">
-                            Pseudo-action labels help supervise imagined rollouts, but policy quality remains bounded by pseudo-label quality.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 05: approach 2 reward-driven transfer -->
-                        <img src="images/4.png" alt="World model reward based transfer approach" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Approach 2: reward signals from imagined rollouts</h3>
-                        <p class="figure-caption">
-                            Reward-based correction is useful, but world-model rewards can underestimate real-world success.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 06: approach 3 action-video fusion -->
-                        <img src="images/5.png" alt="Action and video fusion approach" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Approach 3: joint action-video modeling</h3>
-                        <p class="figure-caption">
-                            Fusing action with video space reduces mismatch, but the overhead makes scaling and generalization harder.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div style="margin-top: 22px;">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 08: challenge question on pixel-space supervision -->
-                        <img src="images/8.png" alt="Questioning whether pixel space supervision is enough" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Pixel-space supervision alone is not enough</h3>
-                        <p class="figure-caption">
-                            World2Act addresses this gap with latent alignment instead of depending on image-space correction alone.
+                            The key gap is not whether world models can imagine behavior, but how to move those dynamics priors into executable VLA control without relying on fragile rendered supervision.
                         </p>
                     </figcaption>
                 </figure>
@@ -699,114 +907,20 @@
                 <h2>Method</h2>
                 <div class="section-rule"></div>
                 <p>
-                    World2Act directly aligns world-model video latents with VLA action latents, then transfers those dynamics into a residual policy for post-training.
+                    The method is a two-stage pipeline: latent alignment first, then residual-policy post-training using transferred world-model dynamics.
                 </p>
             </div>
 
-            <div class="two-column">
+            <div>
                 <figure class="content-card">
                     <div class="figure-frame">
-                        <!-- Slide 09: direct latent-to-policy alignment -->
-                        <img src="images/8.png" alt="Direct latent to policy alignment solution" loading="lazy">
+                        <!-- Slide 12: full World2Act overview -->
+                        <img src="images/12.png" alt="World2Act full pipeline for direct latent to policy alignment" loading="lazy">
                     </div>
                     <figcaption class="card-copy">
-                        <h3>Direct latent-to-policy alignment</h3>
+                        <h3>Main pipeline</h3>
                         <p class="figure-caption">
-                            The core idea is to transfer world-model knowledge in latent space rather than by pseudo-actions or rendered rewards.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 13: full World2Act overview -->
-                        <img src="images/12.png" alt="World2Act overview pipeline" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Two-stage training pipeline</h3>
-                        <p class="figure-caption">
-                            Stage 1 aligns action and video latents; Stage 2 post-trains a residual policy using transferred world-model dynamics.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="three-column" style="margin-top: 22px;">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 10: skill-compositional data -->
-                        <img src="images/9.png" alt="Skill compositional data construction" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Skill-compositional data pipeline</h3>
-                        <p class="figure-caption">
-                            Demonstrations are decomposed into aligned atomic skills and sub-videos for both training and compositional inference.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 11: why atomization matters -->
-                        <img src="images/10.png" alt="Why action atomization matters" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Why action atomization matters</h3>
-                        <p class="figure-caption">
-                            Skill-level training stabilizes learning and concentrates the distribution around consistent horizons.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 12: world-model video generation evaluation -->
-                        <img src="images/11.png" alt="Evaluating video generation backbones" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Backbone selection for the world model</h3>
-                        <p class="figure-caption">
-                            Cosmos-Predict 2 is chosen as the primary video-generation backbone based on qualitative and quantitative evaluation.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <section class="section" id="setups">
-            <div class="section-heading">
-                <h2>Experimental Setups</h2>
-                <div class="section-rule"></div>
-                <p>
-                    World2Act is evaluated in simulation benchmarks as well as on a Franka Research 3 system equipped with a third-view camera.
-                </p>
-            </div>
-
-            <div class="two-column">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 14: simulation setup with RoboCasa and LIBERO -->
-                        <img src="images/13.png" alt="Simulation setup using RoboCasa and LIBERO" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Simulation benchmarks</h3>
-                        <p class="figure-caption">
-                            RoboCasa provides rich kitchen layouts, while LIBERO stresses transfer across spatial, object, goal, and long-horizon generalization.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 15: real-world setup on Franka Research 3 -->
-                        <img src="images/14.png" alt="Real world Franka Research 3 setup" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Real-world setup</h3>
-                        <p class="figure-caption">
-                            The real robot evaluation covers pick-and-place, bowl pickup, and drawer closing under third-view perception.
+                            World2Act aligns world-model video latents with VLA action latents, transfers the learned representation into a shared latent space, and uses that signal to improve a residual policy.
                         </p>
                     </figcaption>
                 </figure>
@@ -844,9 +958,9 @@
                 </div>
 
                 <div class="metric-card">
-                    <strong>20</strong>
-                    <h3>Physical trials</h3>
-                    <p>Per-task evaluation in the real-world study.</p>
+                    <strong>6.7%</strong>
+                    <h3>Real-world improvement</h3>
+                    <p>Headline gain reported for physical robot evaluation after World2Act post-training.</p>
                 </div>
             </div>
 
@@ -878,7 +992,7 @@
                 </figure>
             </div>
 
-            <div class="summary-grid" style="margin-top: 22px;">
+            <div class="results-plot">
                 <figure class="content-card">
                     <div class="figure-frame">
                         <!-- Slide 18: real-world robot success rates -->
@@ -887,132 +1001,101 @@
                     <figcaption class="card-copy">
                         <h3>Real-world evaluation</h3>
                         <p class="figure-caption">
-                            The real-world study reports higher success across all three physical tasks after adding World2Act post-training.
+                            The physical robot study improves all three tasks, with the headline result summarized as a 6.7% real-world improvement.
                         </p>
                     </figcaption>
                 </figure>
-
-                <div class="summary-card">
-                    <h3>Real-world gains</h3>
-                    <p>
-                        The real-world plot shows consistent improvements across all three tasks used in physical evaluation, confirming that the latent transfer also benefits execution outside simulation.
-                    </p>
-                    <ul>
-                        <li>Pick &amp; place improves from 0.05 to 0.10.</li>
-                        <li>Pick bowl improves from 0.20 to 0.25.</li>
-                        <li>Close drawer improves from 0.15 to 0.25.</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <section class="section">
+        <section class="section" id="qualitative">
             <div class="section-heading">
                 <h2>Qualitative Results</h2>
                 <div class="section-rule"></div>
                 <p>
-                    Skill-level imagination and real-world execution demonstrate how World2Act composes long-horizon behaviors from atomic skills.
+                    Click a pane to open grouped qualitative videos in the main screen, then close with the X button.
                 </p>
             </div>
 
-            <div class="gallery-grid">
-                <figure class="gallery-card">
-                    <div class="figure-frame">
-                        <!-- Slide 19: imagination by Skill-WM, bowl to plate -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_19.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Imagined rollout: bowl to plate</h3>
-                        <p class="figure-caption">Skill-WM composes a multi-step bowl placement sequence from modular atomic skills.</p>
-                    </figcaption>
-                </figure>
+            <p class="section-kicker">Skill-Compositional World Model</p>
+            <p class="section-body-copy">
+                These panes highlight successful composition in imagined rollouts. The first uses the current world-model videos, while the second reserves placeholders for additional LIBERO examples.
+            </p>
 
-                <figure class="gallery-card">
+            <div class="two-column">
+                <button class="content-card interactive-card" type="button" data-gallery="skill-world-model">
                     <div class="figure-frame">
-                        <!-- Slide 20: imagination by Skill-WM, cup to cabinet -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_20.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="preview-strip three">
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/video_page_19.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/video_page_20.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="preview-tile">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/video_page_21.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
                     </div>
-                    <figcaption class="card-copy">
-                        <h3>Imagined rollout: cup to cabinet</h3>
-                        <p class="figure-caption">Composable latent rollouts remain stable for longer-horizon rearrangement behavior.</p>
-                    </figcaption>
-                </figure>
+                    <div class="card-copy">
+                        <h3>Compositional imagined rollouts</h3>
+                        <p class="figure-caption">Open this pane to view three imagined world-model rollouts together: bowl to plate, cup to cabinet, and drawer closing.</p>
+                    </div>
+                </button>
 
-                <figure class="gallery-card">
+                <button class="content-card interactive-card" type="button" data-gallery="libero-world-model">
                     <div class="figure-frame">
-                        <!-- Slide 21: imagination by Skill-WM, close drawer -->
-                        <img src="videos/video_page_21.mp4" alt="Skill-WM imagination for drawer closing" loading="lazy">
+                        <div class="preview-strip three">
+                            <div class="preview-placeholder">videos/libero_pick_and_place.mp4</div>
+                            <div class="preview-placeholder">videos/libero_open_double_doors.mp4</div>
+                            <div class="preview-placeholder">videos/libero_long_horizon.mp4</div>
+                        </div>
                     </div>
-                    <figcaption class="card-copy">
-                        <h3>Imagined rollout: close drawer</h3>
-                        <p class="figure-caption">The skill prior also captures structured manipulation like drawer closing.</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-card">
-                    <div class="figure-frame">
-                        <!-- Slide 22: imagination versus execution -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_22.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                    <div class="card-copy">
+                        <h3>Additional LIBERO cases</h3>
+                        <p class="figure-caption">Reserved placeholders for additional skill-compositional examples such as pick-and-place, open double doors, and long-horizon LIBERO tasks.</p>
                     </div>
-                    <figcaption class="card-copy">
-                        <h3>Imagination and execution</h3>
-                        <p class="figure-caption">World2Act connects imagined skill rollouts with final execution on the physical robot.</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-card">
-                    <div class="figure-frame">
-                        <!-- Slide 23: execution cup to plate -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_23.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Execution: cup to plate</h3>
-                        <p class="figure-caption">The post-trained residual policy executes the transferred behavior on the real robot.</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-card">
-                    <div class="figure-frame">
-                        <!-- Slide 24: execution pick bowl -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_24.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Execution: pick bowl</h3>
-                        <p class="figure-caption">World2Act improves execution quality on the bowl pickup task.</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-card">
-                    <div class="figure-frame">
-                        <!-- Slide 25: execution close drawer -->
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="videos/video_page_25.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>Execution: close drawer</h3>
-                        <p class="figure-caption">Drawer closing is another example where latent transfer leads to better physical behavior.</p>
-                    </figcaption>
-                </figure>
+                </button>
             </div>
+
+            <p class="section-kicker">Real-World Execution</p>
+            <p class="section-body-copy">
+                The execution results are grouped into one row of three panes, matching the requested interactive comparison view.
+            </p>
+
+            <button class="content-card interactive-card" type="button" data-gallery="execution-world2act">
+                <div class="figure-frame">
+                    <div class="preview-strip three">
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_23.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_24.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_25.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-copy">
+                    <h3>Execution by GR00T-N1.6 + World2Act</h3>
+                    <p class="figure-caption">Click to open cup-to-plate, pick-bowl, and close-drawer execution results together.</p>
+                </div>
+            </button>
         </section>
 
         <hr class="section-divider">
@@ -1026,31 +1109,29 @@
                 </p>
             </div>
 
-            <div class="summary-grid">
-                <figure class="content-card">
-                    <div class="figure-frame">
-                        <!-- Slide 26: summary and key contributions -->
-                        <img src="images/26.png" alt="World2Act summary and key contributions" loading="lazy">
-                    </div>
-                    <figcaption class="card-copy">
-                        <h3>World2Act overview</h3>
-                        <p class="figure-caption">
-                            The summary slide highlights latent action alignment, skill composition, and strong performance across simulation and real-world evaluation.
-                        </p>
-                    </figcaption>
-                </figure>
-
-                <div class="summary-card">
-                    <h3>Key contributions</h3>
-                    <ul>
-                        <li><strong style="color: var(--text-deep);">Latent action alignment:</strong> direct transfer from world-model video dynamics into VLA action space.</li>
-                        <li><strong style="color: var(--text-deep);">Skill-compositional data:</strong> atomic subgoals enable stable arbitrary-length imagination rollouts.</li>
-                        <li><strong style="color: var(--text-deep);">Scalable post-training:</strong> a residual policy improves strong base VLAs without replacing them.</li>
-                        <li><strong style="color: var(--text-deep);">Broad evaluation:</strong> gains hold across RoboCasa, LIBERO, and real-world robot tasks.</li>
-                    </ul>
-                </div>
+            <div class="summary-card summary-single">
+                <h3>Key contributions</h3>
+                <ul>
+                    <li><strong style="color: var(--text-deep);">Latent action alignment:</strong> World2Act transfers world-model dynamics into VLA control without depending on pseudo-actions or pixel-space rewards.</li>
+                    <li><strong style="color: var(--text-deep);">Skill-compositional generation:</strong> atomic decomposition keeps arbitrary-length imagined rollouts stable enough to support downstream policy improvement.</li>
+                    <li><strong style="color: var(--text-deep);">Scalable post-training:</strong> the method improves strong base VLAs through a residual policy instead of replacing the original backbone.</li>
+                    <li><strong style="color: var(--text-deep);">Consistent empirical gains:</strong> improvements hold in RoboCasa, LIBERO, and the real-world study, including the highlighted 6.7% physical-robot gain.</li>
+                </ul>
             </div>
         </section>
+
+        <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+            <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+                <div class="gallery-modal-header">
+                    <div>
+                        <h3 id="gallery-modal-title">Qualitative Gallery</h3>
+                        <p id="gallery-modal-description"></p>
+                    </div>
+                    <button class="gallery-modal-close" type="button" id="gallery-modal-close" aria-label="Close">×</button>
+                </div>
+                <div class="gallery-modal-grid" id="gallery-modal-grid"></div>
+            </div>
+        </div>
 
         <div class="footer">
             World2Act
@@ -1060,6 +1141,87 @@
     <script>
         const sections = Array.from(document.querySelectorAll("main section[id]"));
         const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
+        const galleryButtons = Array.from(document.querySelectorAll("[data-gallery]"));
+        const galleryModal = document.getElementById("gallery-modal");
+        const galleryModalTitle = document.getElementById("gallery-modal-title");
+        const galleryModalDescription = document.getElementById("gallery-modal-description");
+        const galleryModalGrid = document.getElementById("gallery-modal-grid");
+        const galleryModalClose = document.getElementById("gallery-modal-close");
+
+        const galleryDefinitions = {
+            "skill-world-model": {
+                title: "Skill-Compositional World Model",
+                description: "Imagined rollouts showing how atomic skills compose into longer behaviors.",
+                items: [
+                    {
+                        type: "video",
+                        label: "Pick and place: bowl to plate",
+                        description: "Existing video from the current page assets.",
+                        src: "videos/video_page_19.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Cup to cabinet",
+                        description: "Existing video from the current page assets.",
+                        src: "videos/video_page_20.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Close drawer",
+                        description: "Existing video from the current page assets.",
+                        src: "videos/video_page_21.mp4"
+                    }
+                ]
+            },
+            "libero-world-model": {
+                title: "LIBERO Skill-Compositional Cases",
+                description: "Placeholder slots for additional LIBERO world-model compositions. Replace these filenames once the videos are available.",
+                items: [
+                    {
+                        type: "placeholder",
+                        label: "LIBERO pick and place",
+                        description: "Placeholder video name",
+                        src: "videos/libero_pick_and_place.mp4"
+                    },
+                    {
+                        type: "placeholder",
+                        label: "LIBERO open double doors",
+                        description: "Placeholder video name",
+                        src: "videos/libero_open_double_doors.mp4"
+                    },
+                    {
+                        type: "placeholder",
+                        label: "LIBERO long-horizon task",
+                        description: "Placeholder video name",
+                        src: "videos/libero_long_horizon.mp4"
+                    }
+                ]
+            },
+            "execution-world2act": {
+                title: "Execution by GR00T-N1.6 + World2Act",
+                description: "Grouped real-world executions after World2Act post-training.",
+                items: [
+                    {
+                        type: "video",
+                        label: "Cup to plate",
+                        description: "Real robot execution for cup placement.",
+                        src: "videos/video_page_23.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Pick bowl",
+                        description: "Real robot execution for bowl pickup.",
+                        src: "videos/video_page_24.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Close drawer",
+                        description: "Real robot execution for drawer closing.",
+                        src: "videos/video_page_25.mp4"
+                    }
+                ]
+            }
+        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -1077,6 +1239,72 @@
         });
 
         sections.forEach((section) => observer.observe(section));
+
+        function renderGalleryItem(item) {
+            if (item.type === "placeholder") {
+                return `
+                    <div class="gallery-modal-media">
+                        <div class="gallery-modal-placeholder">${item.src}</div>
+                        <div class="gallery-modal-caption">
+                            <strong>${item.label}</strong>
+                            <p>${item.description}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="gallery-modal-media">
+                    <video controls autoplay loop muted playsinline preload="metadata">
+                        <source src="${item.src}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-modal-caption">
+                        <strong>${item.label}</strong>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openGallery(key) {
+            const gallery = galleryDefinitions[key];
+
+            if (!gallery) {
+                return;
+            }
+
+            galleryModalTitle.textContent = gallery.title;
+            galleryModalDescription.textContent = gallery.description;
+            galleryModalGrid.innerHTML = gallery.items.map(renderGalleryItem).join("");
+            galleryModal.classList.add("is-open");
+            galleryModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGallery() {
+            galleryModal.classList.remove("is-open");
+            galleryModal.setAttribute("aria-hidden", "true");
+            galleryModalGrid.innerHTML = "";
+            document.body.style.overflow = "";
+        }
+
+        galleryButtons.forEach((button) => {
+            button.addEventListener("click", () => openGallery(button.dataset.gallery));
+        });
+
+        galleryModalClose.addEventListener("click", closeGallery);
+        galleryModal.addEventListener("click", (event) => {
+            if (event.target === galleryModal) {
+                closeGallery();
+            }
+        });
+
+        window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && galleryModal.classList.contains("is-open")) {
+                closeGallery();
+            }
+        });
     </script>
 </body>
 </html>
