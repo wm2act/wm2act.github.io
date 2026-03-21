@@ -1072,8 +1072,36 @@
                     <h3>Real-World Skill-Compositional World Model Imagined rollouts</h3>
                     <p class="figure-caption">Bowl to plate, cup to cabinet, and drawer closing.</p>
                 </div>
-            </button>
+                </button>
             </div>
+
+            <p class="section-kicker">Real-World Execution</p>
+
+            <button class="content-card interactive-card" type="button" data-gallery="execution-world2act">
+                <div class="figure-frame">
+                    <div class="preview-strip three">
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_23.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_24.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="preview-tile">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/video_page_25.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-copy">
+                    <h3>Execution by GR00T-N1.6 + World2Act</h3>
+                    <p class="figure-caption">Cup to plate, pick bowl, and close drawer.</p>
+                </div>
+            </button>
         </section>
 
         <hr class="section-divider">
@@ -1196,6 +1224,30 @@
                         label: "Close drawer",
                         description: "Existing imagined rollout video.",
                         src: "videos/video_page_21.mp4"
+                    }
+                ]
+            },
+            "execution-world2act": {
+                title: "Execution by GR00T-N1.6 + World2Act",
+                description: "Grouped real-world execution results after World2Act post-training.",
+                items: [
+                    {
+                        type: "video",
+                        label: "Cup to plate",
+                        description: "Real robot execution for cup placement.",
+                        src: "videos/video_page_23.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Pick bowl",
+                        description: "Real robot execution for bowl pickup.",
+                        src: "videos/video_page_24.mp4"
+                    },
+                    {
+                        type: "video",
+                        label: "Close drawer",
+                        description: "Real robot execution for drawer closing.",
+                        src: "videos/video_page_25.mp4"
                     }
                 ]
             }
