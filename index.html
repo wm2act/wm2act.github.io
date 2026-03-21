@@ -753,6 +753,27 @@
             gap: 16px;
         }
 
+        .gallery-modal-dialog.single-item {
+            width: min(1240px, 100%);
+        }
+
+        .gallery-modal-dialog.single-item .gallery-modal-header h3 {
+            font-size: clamp(20px, 2.2vw, 28px);
+            line-height: 1.15;
+        }
+
+        .gallery-modal-grid.single-item {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-modal-grid.single-item .gallery-modal-media {
+            max-width: 1100px;
+        }
+
+        .gallery-modal-grid.single-item .gallery-modal-media video {
+            aspect-ratio: 16 / 9;
+        }
+
         .gallery-modal-media {
             background: var(--surface-soft);
             border: 1px solid #edf2f7;
@@ -1122,7 +1143,7 @@
                     </div>
                     <div class="card-copy">
                         <h3>RoboCasa Skill-Compositional World Model Imagined rollouts</h3>
-                        <p class="figure-caption">pick the condiment bottle from the cabinet and place it on the counter, pick the cupcake from the counter and place it in the cabinet, open the right drawer.</p>
+                        <p class="figure-caption">Task: pick the condiment bottle from the cabinet and place it on the counter, pick the cupcake from the counter and place it in the cabinet, open the right drawer.</p>
                     </div>
                 </button>
 
@@ -1148,7 +1169,7 @@
                     </div>
                     <div class="card-copy">
                         <h3>LIBERO Skill-Compositional World Model Imagined rollouts</h3>
-                        <p class="figure-caption">open the middle drawer of the cabinet, pick up the black bowl from table center and place it on the plate, pick up the book and place it in the back compartment of the caddy.</p>
+                        <p class="figure-caption">Task: open the middle drawer of the cabinet, pick up the black bowl from table center and place it on the plate, pick up the book and place it in the back compartment of the caddy.</p>
                     </div>
                 </button>
 
@@ -1174,7 +1195,7 @@
                 </div>
                 <div class="card-copy">
                     <h3>Real-World Skill-Compositional World Model Imagined rollouts</h3>
-                    <p class="figure-caption">Bowl to plate, cup to cabinet, and drawer closing.</p>
+                    <p class="figure-caption">Task: Bowl to plate, cup to cabinet, and drawer closing.</p>
                 </div>
                 </button>
             </div>
@@ -1286,6 +1307,7 @@
         const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
         const galleryButtons = Array.from(document.querySelectorAll("[data-gallery]"));
         const galleryModal = document.getElementById("gallery-modal");
+        const galleryModalDialog = document.querySelector(".gallery-modal-dialog");
         const galleryModalTitle = document.getElementById("gallery-modal-title");
         const galleryModalDescription = document.getElementById("gallery-modal-description");
         const galleryModalGrid = document.getElementById("gallery-modal-grid");
@@ -1456,6 +1478,8 @@
             galleryModalTitle.textContent = gallery.title;
             galleryModalDescription.textContent = gallery.description;
             galleryModalGrid.innerHTML = gallery.items.map(renderGalleryItem).join("");
+            galleryModalGrid.classList.toggle("single-item", gallery.items.length === 1);
+            galleryModalDialog.classList.toggle("single-item", gallery.items.length === 1);
             galleryModal.classList.add("is-open");
             galleryModal.setAttribute("aria-hidden", "false");
             document.body.style.overflow = "hidden";
@@ -1465,6 +1489,8 @@
             galleryModal.classList.remove("is-open");
             galleryModal.setAttribute("aria-hidden", "true");
             galleryModalGrid.innerHTML = "";
+            galleryModalGrid.classList.remove("single-item");
+            galleryModalDialog.classList.remove("single-item");
             document.body.style.overflow = "";
         }
 
