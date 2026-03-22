@@ -972,10 +972,14 @@
                     </p>
                 </div>
 
-                <div class="note-card">
-                    <h2>Abstract</h2>
-                    <p>
-                        World models can now imagine rich robotic futures, but existing WM-to-policy transfer often relies on pseudo-actions, pixel-space rewards, or heavy joint video-action modeling. World2Act introduces direct latent-to-policy alignment: a post-training recipe that aligns denoised world-model video latents with VLA action latents and transfers that dynamics prior into a residual policy. To handle long-horizon behavior, the framework decomposes instructions into atomic skills and aligns skill-level sub-videos chronologically. Across RoboCasa, LIBERO, and real-world manipulation, World2Act consistently improves over strong WM-based post-training baselines.
+               <div class="note-card">
+                    <h2 style="text-align: center; margin-bottom: 20px;">Abstract</h2>
+                    <p style="text-align: justify; line-height: 1.6; font-size: 1.1em; color: #333;">
+                        <strong>World Models (WMs)</strong> have emerged as a promising approach for post-training <strong>Vision-Language-Action (VLA)</strong> policies to improve robustness and generalization under environmental changes. However, most WM-based post-training methods rely on pixel-space supervision, making policies sensitive to pixel-level artifacts and hallucination from imperfect WM rollouts. We introduce 
+                        <span style="font-variant: small-caps; font-weight: bold;">World2Act</span>, a post-training framework that aligns VLA actions directly with WM video-dynamics latents using a contrastive matching objective, reducing dependence on pixels. Post-training performance is tied to rollout quality, yet current WMs struggle with arbitrary-length video generation as they are mostly trained on fixed-length clips while robotic execution durations vary widely. To address this, we propose an automatic LLM-based skill-decomposition pipeline that segments high-level instructions into low-level prompts. Our pipeline produces 
+                        <span style="font-variant: small-caps; font-weight: bold;">RoboCasa-Skill</span> and 
+                        <span style="font-variant: small-caps; font-weight: bold;">LIBERO-Skill</span>, supporting skill-compositional WMs that remain temporally consistent across diverse task horizons. Empirically, applying 
+                        <span style="font-variant: small-caps; font-weight: bold;">World2Act</span> to VLAs like <strong>GR00T-N1.6</strong> and <strong>Cosmos Policy</strong> achieves state-of-the-art results on RoboCasa and LIBERO, and improves real-world performance by <strong>6.7%</strong>, enhancing embodied agent generalization.
                     </p>
                 </div>
             </div>
