@@ -83,14 +83,26 @@
             gap: 24px;
         }
 
+        /* 1. Target the correct class: .brand-logo */
+        .brand-logo {
+            /* Set height to match or slightly exceed your 18px font size */
+            height: 22px; 
+            width: auto;
+            
+            /* These ensure the logo stays centered with the text */
+            display: block; 
+            flex-shrink: 0;
+        }
+        
         .brand {
             display: inline-flex;
             align-items: center;
-            gap: 10px; /* Slightly tighter gap for a smaller logo */
+            gap: 10px; /* Space between logo and "World2Act" */
             font-size: 18px;
             font-weight: 700;
             color: var(--text-deep);
             text-decoration: none;
+            line-height: 1; /* Helps with vertical centering */
         }
         
         .brand-mark {
