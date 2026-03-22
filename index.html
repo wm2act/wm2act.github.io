@@ -86,25 +86,37 @@
         .brand {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px; /* Slightly tighter gap for a smaller logo */
             font-size: 18px;
             font-weight: 700;
             color: var(--text-deep);
+            text-decoration: none;
         }
-
+        
         .brand-mark {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
+            /* Scaling down to match 18px text height */
+            width: 26px; 
+            height: 26px;
+            
+            /* Adjusted radius for the smaller size */
+            border-radius: 6px; 
+            
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #235fae 0%, #194b8d 100%);
             color: #fff;
-            font-size: 15px;
+            
+            /* Scaling the inner icon/text size */
+            font-size: 11px; 
             font-weight: 700;
-            letter-spacing: -0.04em;
-            box-shadow: 0 8px 18px rgba(25, 75, 141, 0.18);
+            letter-spacing: -0.02em;
+            
+            /* Softened the shadow for the smaller footprint */
+            box-shadow: 0 4px 10px rgba(25, 75, 141, 0.12);
+            
+            /* Prevents the logo from shrinking on small screens */
+            flex-shrink: 0; 
         }
 
         .nav-links {
